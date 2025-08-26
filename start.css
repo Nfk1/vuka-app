@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  background: white;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  color: #000;
+}
+
+img {
+  width: 50vw;
+  height: auto;
+  max-width: 300px;
+  min-width: 50px;
+  object-fit: contain;
+}
+
+/* Анимация вращения на 360 градусов за 2 секунды */
+.rotate {
+  animation: rotate360 2s forwards;
+}
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Контейнер для текста, изначально пустой */
+#text {
+  white-space: nowrap;
+  min-width: 100px;
+  height: auto; /* пусть высота подстраивается */
+  overflow: hidden;
+  border-right: 2px solid black; /* курсор-полоса */
+  animation: blink 0.7s steps(2) infinite;
+  font-size: clamp(
+    3rem,
+    10vw,
+    10rem
+  ); /* адаптивный размер от 3rem до 10rem, зависящий от ширины окна */
+  font-weight: bold; /* жирный текст */
+  line-height: 1;
+  max-height: 12rem;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}

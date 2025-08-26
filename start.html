@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добро пожаловать!</title>
+<script src="script-start.js"></script>
+    <link rel="stylesheet" href="start.css" />
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#ffffff">
+
+  </head>
+  <body>
+    <div class="welcome">
+      <img id="logo" src="logo-welcom.png" alt="логотип" />
+      <div id="text"></div>
+    </div>
+
+    <script>
+      const logo = document.getElementById("logo");
+      const textElem = document.getElementById("text");
+      const text = "VUKA";
+      let index = 0;
+
+      // Запускаем анимацию вращения
+      logo.classList.add("rotate");
+
+      // Когда анимация закончится - запускаем эффект печати
+      logo.addEventListener("animationend", () => {
+        function typeNextLetter() {
+          if (index < text.length) {
+            textElem.textContent += text[index];
+            index++;
+            setTimeout(typeNextLetter, 300); // скорость печати: 300мс на букву
+          } else {
+            // Убираем мигающий курсор, когда текст напечатан
+            textElem.style.borderRight = "none";
+          }
+        }
+        typeNextLetter();
+      });
+    </script>
+  </body>
+</html>
