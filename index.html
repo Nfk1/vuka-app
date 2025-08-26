@@ -15,6 +15,17 @@
       <img id="logo" src="logo-welcom.png" alt="логотип" />
       <div id="text"></div>
     </div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(reg) { 
+         console.log('Service worker registered.', reg); 
+      })
+      .catch(function(error) {
+         console.error('Service worker registration failed:', error);
+      });
+  }
+</script>
 
     <script>
       const logo = document.getElementById("logo");
@@ -42,3 +53,4 @@
     </script>
   </body>
 </html>
+
