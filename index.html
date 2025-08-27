@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Добро пожаловать!</title>
-<link rel="manifest" href="/manifest.json" />
-<link rel="stylesheet" href="style.css" />
-
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
-
-  <meta name="theme-color" content="ffffff" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Push уведомления с OneSignal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#0a84ff" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(() => console.log('Service Worker зарегистрирован'))
-      .catch((err) => console.error('Ошибка регистрации service worker:', err));
-  }
-</script>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   </head>
   <body>
     <div class="welcome">
@@ -64,6 +54,7 @@
     </script>
   </body>
 </html>
+
 
 
 
